@@ -78,15 +78,6 @@ Once running, access Swagger documentation at:
 go test -v ./...
 ```
 
-## License
-
-This project is licensed under the MIT License.
-
-## Acknowledgments
-
-- Open source community
-
-
 ## API Design Diagram Explanation
 
 [Sequence Diagram] (https://mermaid.live/edit#pako:eNptkl1PgzAUhv9Kc640YRuDfdFETXRq9ELN5pXiRUOPswottsU4l_13y8rY_OCCwDnP-563B1aQKY5AweB7hTLDqWALzYpUEneVTFuRiZJJS85ygdL-rc9UZVH_wytptcrz_3pz1B8iw7-NKbPMV_3dD-0cH_splFye35MeK0Wv1IpXmTW9TBXOAU8EN0f9IPI6jzvdLgX1RaLrg5rmILu2Y5tUlCzQ3jX2p8urqTl4dMZPh17SUI6vwzpXZJxs03RfjZKeq7udfdcZ2kpLwvK8xX86_op7IXJ3BuS_6L3Ie3u5ULpg1jpaoymVNPhjEbX1ZpWUXM9vb1oIAlhowYE-s9xgAAU6m_odVrU-BfuCBaZA3SNn-i2FVK6dyH2sB6UKoFZXTqZVtXhpTaqSM7v9kVoEJUd9pippgQ43DkBX8Ak06Xf74yQah3E0iOJ4MApgCTTqd-PxIEmGSTgKh-FkFK8D-NrMDLuT8XD9DY006DI)
@@ -136,3 +127,11 @@ Built-in Swagger UI for API exploration
 - All data originates from the JSON file
 - Service layer handles all data operations
 - Controller prepares HTTP responses
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- Open source community
