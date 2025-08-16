@@ -29,7 +29,7 @@ docker buildx build -t item-comparison-api .
 docker run -p 8080:8080 item-comparison-api
 ```
 
-# If you are using colima and see the following error
+### If you are using colima and see the following error
 ```bash
 ERROR: BuildKit is enabled but the buildx component is missing or broken.
        Install the buildx component to build images with BuildKit:
