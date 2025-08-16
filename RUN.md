@@ -1,8 +1,8 @@
 # How to Run the Item Comparison API
 
 ## Prerequisites
-- Go 1.16 or higher installed
-- Git (optional)
+- Go v1.24 or higher installed
+- Git
 
 ## Installation
 
