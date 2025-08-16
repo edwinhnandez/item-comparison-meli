@@ -86,3 +86,53 @@ This project is licensed under the MIT License.
 
 - Open source community
 
+
+## API Design Diagram Explanation
+
+[Sequence Diagram] (https://mermaid.live/edit#pako:eNptkl1PgzAUhv9Kc640YRuDfdFETXRq9ELN5pXiRUOPswottsU4l_13y8rY_OCCwDnP-563B1aQKY5AweB7hTLDqWALzYpUEneVTFuRiZJJS85ygdL-rc9UZVH_wytptcrz_3pz1B8iw7-NKbPMV_3dD-0cH_splFye35MeK0Wv1IpXmTW9TBXOAU8EN0f9IPI6jzvdLgX1RaLrg5rmILu2Y5tUlCzQ3jX2p8urqTl4dMZPh17SUI6vwzpXZJxs03RfjZKeq7udfdcZ2kpLwvK8xX86_op7IXJ3BuS_6L3Ie3u5ULpg1jpaoymVNPhjEbX1ZpWUXM9vb1oIAlhowYE-s9xgAAU6m_odVrU-BfuCBaZA3SNn-i2FVK6dyH2sB6UKoFZXTqZVtXhpTaqSM7v9kVoEJUd9pippgQ43DkBX8Ak06Xf74yQah3E0iOJ4MApgCTTqd-PxIEmGSTgKh-FkFK8D-NrMDLuT8XD9DY006DI)
+
+### Components
+1. Client
+- The frontend or API consumer making HTTP requests
+
+2. API Server
+- The Go backend application with Gin framework
+- Gin Router: Routes incoming requests to controllers
+- Product Controller: Handles HTTP logic and responses
+- Product Service: Contains business logic
+- Product Model: Data structure definitions
+
+3. JSON Data File
+Persistent storage (replaces database)
+
+4. Swagger UI
+Interactive API documentation
+
+### Request Flow
+1. List Products
+- Client → GET /api/products → Router → Controller → Service → Model → JSON Data
+
+2. Compare Products
+- Client → GET /api/products/compare?ids=1,2 → Router → Controller → Service (filters by IDs) → Model → JSON Data
+
+3. Get Single Product
+- Client → GET /api/products/:id → Router → Controller → Service (finds by ID) → Model → JSON Data
+
+4. API Documentation
+- Client → GET /swagger → Swagger UI (shows interactive docs)
+
+### Key Design Features
+1. Layered Architecture
+- Presentation Layer (Controller)
+- Business Logic Layer (Service)
+- Data Access Layer (Model + JSON file)
+
+2. Separation of Concerns
+- Routing, business logic, and data handling are separated
+- JSON file acts as a simple database substitute
+3. Documentation
+Built-in Swagger UI for API exploration
+4. Data Flow
+- All data originates from the JSON file
+- Service layer handles all data operations
+- Controller prepares HTTP responses
