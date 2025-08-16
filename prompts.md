@@ -6,8 +6,6 @@
 
 # AI Tool Prompts Used in Development
 
-This document lists the prompts used with AI tools (like ChatGPT, GitHub Copilot, etc.) to assist in developing the Item Comparison API.
-
 ## 1. Project Setup Prompts
 
 **Prompt:**  
