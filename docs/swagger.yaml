@@ -1,0 +1,96 @@
+basePath: /api
+definitions:
+  models.ProductResponse:
+    properties:
+      data: {}
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: API for comparing product items
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Item Comparison API
+  version: "1.0"
+paths:
+  /products:
+    get:
+      description: Retrieve a list of all products
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+      summary: Get all products
+      tags:
+      - Products
+  /products/{id}:
+    get:
+      description: Retrieve a single product by its ID
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+      summary: Get product by ID
+      tags:
+      - Products
+  /products/compare:
+    get:
+      description: Compare products by their IDs
+      parameters:
+      - description: Comma-separated list of product IDs
+        in: query
+        name: ids
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ProductResponse'
+      summary: Compare products
+      tags:
+      - Products
+swagger: "2.0"
